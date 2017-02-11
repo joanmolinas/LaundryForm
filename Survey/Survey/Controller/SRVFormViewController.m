@@ -74,6 +74,19 @@
 #pragma mark - Actions -
 - (IBAction)save:(UIBarButtonItem *)sender {
     NSLog(@"%@", [self formValues]);
+    [self reset];
+    
+}
+    
+- (void)reset {
+    [self.form.formSections enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        XLFormSectionDescriptor* sectionDescriptor = (XLFormSectionDescriptor*)obj;
+        [sectionDescriptor.formRows enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            XLFormRowDescriptor* row = (XLFormRowDescriptor*)obj;
+            row.value = @(0);
+            [self reloadFormRow:row];
+        }];
+    }];
 }
     
     
