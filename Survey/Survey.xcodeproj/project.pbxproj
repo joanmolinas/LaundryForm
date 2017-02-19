@@ -16,6 +16,10 @@
 		4E573D371E4F973800123E09 /* SurveyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E573D361E4F973800123E09 /* SurveyTests.m */; };
 		4E573D441E4F99C000123E09 /* SRVFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E573D431E4F99C000123E09 /* SRVFormViewController.m */; };
 		4E573D461E4FA23300123E09 /* Questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E573D451E4FA23300123E09 /* Questions.json */; };
+		4E573D481E4FA9BA00123E09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E573D471E4FA9BA00123E09 /* GoogleService-Info.plist */; };
+		4E9690761E58E72F00B21D7A /* FEZAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E96906C1E58E72F00B21D7A /* FEZAuth.m */; };
+		4E9690771E58E72F00B21D7A /* FEZDatabaseConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E96906E1E58E72F00B21D7A /* FEZDatabaseConnector.m */; };
+		4E9690791E58E72F00B21D7A /* FEZManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9690721E58E72F00B21D7A /* FEZManager.m */; };
 		516232C12A94E02B8499D29E /* Pods_SurveyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E571282B619CDE9A2C3EF4 /* Pods_SurveyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,13 @@
 		4E573D421E4F99C000123E09 /* SRVFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRVFormViewController.h; path = Controller/SRVFormViewController.h; sourceTree = "<group>"; };
 		4E573D431E4F99C000123E09 /* SRVFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRVFormViewController.m; path = Controller/SRVFormViewController.m; sourceTree = "<group>"; };
 		4E573D451E4FA23300123E09 /* Questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Questions.json; sourceTree = "<group>"; };
+		4E573D471E4FA9BA00123E09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4E96906B1E58E72F00B21D7A /* FEZAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FEZAuth.h; path = Survey/Firebase/FEZAuth.h; sourceTree = "<group>"; };
+		4E96906C1E58E72F00B21D7A /* FEZAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FEZAuth.m; path = Survey/Firebase/FEZAuth.m; sourceTree = "<group>"; };
+		4E96906D1E58E72F00B21D7A /* FEZDatabaseConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FEZDatabaseConnector.h; path = Survey/Firebase/FEZDatabaseConnector.h; sourceTree = "<group>"; };
+		4E96906E1E58E72F00B21D7A /* FEZDatabaseConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FEZDatabaseConnector.m; path = Survey/Firebase/FEZDatabaseConnector.m; sourceTree = "<group>"; };
+		4E9690711E58E72F00B21D7A /* FEZManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FEZManager.h; path = Survey/Firebase/FEZManager.h; sourceTree = "<group>"; };
+		4E9690721E58E72F00B21D7A /* FEZManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FEZManager.m; path = Survey/Firebase/FEZManager.m; sourceTree = "<group>"; };
 		67E571282B619CDE9A2C3EF4 /* Pods_SurveyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurveyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D145DC8226BC4E2B0DF9F5F /* Pods-SurveyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyTests/Pods-SurveyTests.release.xcconfig"; sourceTree = "<group>"; };
 		9902B52FCA4606186D3118CB /* Pods-Survey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Survey/Pods-Survey.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +120,7 @@
 				4E573D1F1E4F973800123E09 /* AppDelegate.h */,
 				4E573D201E4F973800123E09 /* AppDelegate.m */,
 				4E573D451E4FA23300123E09 /* Questions.json */,
+				4E96906A1E58E72200B21D7A /* Firebase */,
 				4E573D411E4F998200123E09 /* Controller */,
 				4E573D251E4F973800123E09 /* Main.storyboard */,
 				4E573D281E4F973800123E09 /* Assets.xcassets */,
@@ -122,6 +134,7 @@
 		4E573D1C1E4F973800123E09 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4E573D471E4FA9BA00123E09 /* GoogleService-Info.plist */,
 				4E573D1D1E4F973800123E09 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -143,6 +156,20 @@
 				4E573D431E4F99C000123E09 /* SRVFormViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		4E96906A1E58E72200B21D7A /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				4E96906B1E58E72F00B21D7A /* FEZAuth.h */,
+				4E96906C1E58E72F00B21D7A /* FEZAuth.m */,
+				4E96906D1E58E72F00B21D7A /* FEZDatabaseConnector.h */,
+				4E96906E1E58E72F00B21D7A /* FEZDatabaseConnector.m */,
+				4E9690711E58E72F00B21D7A /* FEZManager.h */,
+				4E9690721E58E72F00B21D7A /* FEZManager.m */,
+			);
+			name = Firebase;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		8B9C8FFAC485E9D2A97ED77C /* Frameworks */ = {
@@ -246,6 +273,7 @@
 			files = (
 				4E573D2C1E4F973800123E09 /* LaunchScreen.storyboard in Resources */,
 				4E573D461E4FA23300123E09 /* Questions.json in Resources */,
+				4E573D481E4FA9BA00123E09 /* GoogleService-Info.plist in Resources */,
 				4E573D291E4F973800123E09 /* Assets.xcassets in Resources */,
 				4E573D271E4F973800123E09 /* Main.storyboard in Resources */,
 			);
@@ -359,8 +387,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E573D441E4F99C000123E09 /* SRVFormViewController.m in Sources */,
+				4E9690791E58E72F00B21D7A /* FEZManager.m in Sources */,
 				4E573D211E4F973800123E09 /* AppDelegate.m in Sources */,
 				4E573D1E1E4F973800123E09 /* main.m in Sources */,
+				4E9690761E58E72F00B21D7A /* FEZAuth.m in Sources */,
+				4E9690771E58E72F00B21D7A /* FEZDatabaseConnector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

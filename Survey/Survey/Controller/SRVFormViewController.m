@@ -7,9 +7,11 @@
 //
 
 #import "SRVFormViewController.h"
+#import "FEZDatabaseConnector.h"
 
 @interface SRVFormViewController ()
 @property (nonatomic, strong) NSArray *questions;
+@property (nonatomic, strong) FEZDatabaseConnector *questionsConnector;
 @end
 
 @implementation SRVFormViewController
@@ -38,29 +40,34 @@
     
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self initConnector];
 }
 
 #pragma mark - Inits -
 - (void)initialize {
 
     XLFormDescriptor *formDescriptor = [XLFormDescriptor formDescriptorWithTitle:@"Lavanda Laundry"];
-    formDescriptor.assignFirstResponderOnShow = YES;
     
     XLFormSectionDescriptor *section;
     XLFormRowDescriptor *row;
     
-    section = [XLFormSectionDescriptor formSectionWithTitle:@"Viabilitat app"];
+    section = [XLFormSectionDescriptor formSectionWithTitle:@"Característiques"];
     
     for (int i = 0; i < self.questions.count; i++) {
         NSDictionary *rowDict = self.questions[i];
         row = [XLFormRowDescriptor formRowDescriptorWithTag:[rowDict[@"tag"] stringValue] rowType:XLFormRowDescriptorTypeBooleanSwitch title:rowDict[@"question"]];
-        row.value = @(0);
+        row.value = [NSNumber numberWithBool:NO];
         [section addFormRow:row];
     }
     
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:[NSString stringWithFormat:@"%lu", (unsigned long)self.questions.count] rowType:XLFormRowDescriptorTypeTextView title:@"Suggerències"];
+    [section addFormRow:row];
     [formDescriptor addFormSection:section];
     self.form = formDescriptor;
+}
+
+- (void)initConnector {
+    _questionsConnector = [FEZDatabaseConnector linkWithDatabaseName:@"question"];
 }
     
 #pragma mark - JSON - 
@@ -74,8 +81,9 @@
 #pragma mark - Actions -
 - (IBAction)save:(UIBarButtonItem *)sender {
     NSLog(@"%@", [self formValues]);
-    [self reset];
-    
+    [self.questionsConnector send:[self formValues] withCompletionBlock:^(NSError * _Nullable error) {
+        [self reset];
+    }];
 }
     
 - (void)reset {
@@ -83,7 +91,11 @@
         XLFormSectionDescriptor* sectionDescriptor = (XLFormSectionDescriptor*)obj;
         [sectionDescriptor.formRows enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             XLFormRowDescriptor* row = (XLFormRowDescriptor*)obj;
-            row.value = @(0);
+            if ([row.rowType isEqualToString:XLFormRowDescriptorTypeBooleanSwitch]) {
+                row.value = [NSNumber numberWithBool:NO];
+            } else if ([row.rowType isEqualToString:XLFormRowDescriptorTypeTextView]){
+                row.value = @"";
+            }
             [self reloadFormRow:row];
         }];
     }];

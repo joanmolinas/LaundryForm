@@ -1,1 +1,69 @@
-{"questions":[{"tag":1,"type":1,"question":"T'agradaria tenir una app..."},{"tag":2,"type":1,"question":"T'agradaria tenir una app..."}]}
+{
+    "questions": [
+                  {
+                  "tag": 1,
+                  "type": 1,
+                  "question": "Pas a pas de com ficar una rentadora"
+                  },
+                  {
+                  "tag": 2,
+                  "type": 1,
+                  "question": "Pas a pas de com ficar una secadora"
+                  },
+                  {
+                  "tag": 3,
+                  "type": 1,
+                  "question": "Consulta horari i localització"
+                  },
+                  {
+                  "tag": 4,
+                  "type": 1,
+                  "question": "Consultar si estem a la bugaderia ara mateix"
+                  },
+                  {
+                  "tag": 5,
+                  "type": 1,
+                  "question": "Poder contactar amb nosaltres ràpidament"
+                  },
+                  {
+                  "tag": 6,
+                  "type": 1,
+                  "question": "Promocions actuals"
+                  },
+                  {
+                  "tag": 7,
+                  "type": 1,
+                  "question": "Pròximes promocions"
+                  },
+                  {
+                  "tag": 8,
+                  "type": 1,
+                  "question": "Explicació cada programa de rentat"
+                  },
+                  {
+                  "tag": 9,
+                  "type": 1,
+                  "question": "Dies indicats amb ofertes"
+                  },
+                  {
+                  "tag": 10,
+                  "type": 1,
+                  "question": "Poder reservar la recollida de roba a un lloc concret"
+                  },
+                  {
+                  "tag": 11,
+                  "type": 1,
+                  "question": "Tenir constància en tot moment de l'estat de la roba"
+                  },
+                  {
+                  "tag": 12,
+                  "type": 1,
+                  "question": "Explicació de cada símbol de rentat"
+                  },
+                  {
+                  "tag": 13,
+                  "type": 1,
+                  "question": "Calculadora de preu i recomanació de rentadora"
+                  }
+                  ]
+}
