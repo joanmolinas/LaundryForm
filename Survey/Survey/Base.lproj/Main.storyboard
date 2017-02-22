@@ -23,6 +23,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="0lV-oG-PKg">
+                        <barButtonItem key="leftBarButtonItem" title="Netejar" id="7zh-Vq-WH3">
+                            <connections>
+                                <action selector="clear:" destination="6GN-4r-6Y4" id="t4o-93-MNi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Guardar" id="wc2-6X-qTG">
                             <connections>
                                 <action selector="save:" destination="6GN-4r-6Y4" id="e3t-fl-jex"/>

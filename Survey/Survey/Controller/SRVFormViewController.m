@@ -59,15 +59,22 @@
         row.value = [NSNumber numberWithBool:NO];
         [section addFormRow:row];
     }
-    
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:[NSString stringWithFormat:@"%lu", (unsigned long)self.questions.count] rowType:XLFormRowDescriptorTypeTextView title:@"Suggerències"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:[NSString stringWithFormat:@"%lu", (unsigned long)self.questions.count] rowType:XLFormRowDescriptorTypeSelectorSegmentedControl title:@"Edat"];
+    row.selectorOptions = @[@"+18", @"+27", @"+45"];
+    row.value = @"+18";
     [section addFormRow:row];
+    
+    
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:[NSString stringWithFormat:@"%lu", (unsigned long)self.questions.count+1] rowType:XLFormRowDescriptorTypeTextView title:@"Suggerències"];
+    row.value = @"";
+    [section addFormRow:row];
+    
     [formDescriptor addFormSection:section];
     self.form = formDescriptor;
 }
 
 - (void)initConnector {
-    _questionsConnector = [FEZDatabaseConnector linkWithDatabaseName:@"question"];
+    _questionsConnector = [FEZDatabaseConnector linkWithDatabaseName:@"question-dev"];
 }
     
 #pragma mark - JSON - 
@@ -80,10 +87,15 @@
 }
 #pragma mark - Actions -
 - (IBAction)save:(UIBarButtonItem *)sender {
+    sender.enabled = NO;
     NSLog(@"%@", [self formValues]);
     [self.questionsConnector send:[self formValues] withCompletionBlock:^(NSError * _Nullable error) {
-        [self reset];
+        if (!error) [self reset];
+        sender.enabled = YES;
     }];
+}
+- (IBAction)clear:(UIBarButtonItem *)sender {
+    [self reset];
 }
     
 - (void)reset {
@@ -95,7 +107,10 @@
                 row.value = [NSNumber numberWithBool:NO];
             } else if ([row.rowType isEqualToString:XLFormRowDescriptorTypeTextView]){
                 row.value = @"";
+            } else {
+                row.value = @"+18";
             }
+            
             [self reloadFormRow:row];
         }];
     }];

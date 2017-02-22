@@ -3,12 +3,12 @@
                   {
                   "tag": 1,
                   "type": 1,
-                  "question": "Pas a pas de com ficar una rentadora"
+                  "question": "Pas a pas de com posar una rentadora"
                   },
                   {
                   "tag": 2,
                   "type": 1,
-                  "question": "Pas a pas de com ficar una secadora"
+                  "question": "Pas a pas de com posar una secadora"
                   },
                   {
                   "tag": 3,
@@ -43,7 +43,7 @@
                   {
                   "tag": 9,
                   "type": 1,
-                  "question": "Dies indicats amb ofertes"
+                  "question": "Saber ofertes periòdiques"
                   },
                   {
                   "tag": 10,
@@ -63,7 +63,22 @@
                   {
                   "tag": 13,
                   "type": 1,
+                  "question": "Com funciona la central de pagament"
+                  },
+                  {
+                  "tag": 14,
+                  "type": 1,
+                  "question": "Saber tots els serveis que ofereix la bugaderia (planxa, costura, catifes...)"
+                  },
+                  {
+                  "tag": 15,
+                  "type": 1,
                   "question": "Calculadora de preu i recomanació de rentadora"
+                  },
+                  {
+                  "tag": 16,
+                  "type": 1,
+                  "question": "Saber en temps real les màquines que estan funcionan"
                   }
                   ]
 }
